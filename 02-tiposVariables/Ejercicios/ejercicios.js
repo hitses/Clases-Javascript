@@ -1,10 +1,3 @@
-let ejercicio1 = '--------------------------------- Ejercicio 1 --------------------------------\n'
-let ejercicio2 = '--------------------------------- Ejercicio 2 --------------------------------\n'
-let ejercicio3 = '--------------------------------- Ejercicio 3 --------------------------------\n'
-let ejercicio4 = '--------------------------------- Ejercicio 4 --------------------------------\n'
-
-console.log(ejercicio1);
-
 /* 
   Definir las siguientes variables con el nombre que creas más apropiado:
   String -> Hola
@@ -21,21 +14,19 @@ console.log(ejercicio1);
   'Hola, me llamo Carlos. Tengo 29 años y vivo en la Calle Falsa, 123. Nací en el año 1992.'
  */
 
-let saludo = "Hola"
-let nombre = "Carlos"
-let edad = "29"
-let calle = "Calle Falsa"
-let año = "2022"
-let calle2 = [
-  calle, 
-  " 123"
-] 
+console.log('--------------------------------- Ejercicio 1 --------------------------------')
 
-console.log(saludo + ', me llamo ' + nombre + '.');
-console.log('Tengo ' + edad, 'años, y vivo en la ' + calle2 + '.');
-console.log('Nací en el año ' + (año - edad -1) + '.\n');
+const hello = 'Hola'
+const name = 'Carlos'
+const age = 29
+const year = 2022
+const street = 'Calle Falsa'
+const direction = [
+  street,
+  123
+]
 
-console.log(ejercicio2);
+console.log(hello + ', me llamo ' + name + '. Tengo ' + age, 'años y vivo en la ' + direction[0] + ' ' + direction[1] + '. Nací en el año ' + (year - age - 1) + '.')
 
 /* 
   Crea un objeto con la siguiente estructura:
@@ -69,7 +60,9 @@ console.log(ejercicio2);
   'Mis padres, {padre} y {madre}, y tiene {edad del padre} y {edad de la madre}. Viven en la {dirección}. En casa también vive mi {hermano}, de {edad del hermano}. Eso quiere decir que nos llevamos {diferencia de edad entre tú y tu hermano}.'
  */
 
-let person = {
+console.log('--------------------------------- Ejercicio 2 --------------------------------')
+
+const PERSON = {
   address: {
     name: 'Revoltosa',
     number: 36
@@ -91,33 +84,36 @@ let person = {
     },
   },
 }
-console.log(`Mis padres, ${person.familiars.father.name} y ${person.familiars.mother.name}, tienen ${person.familiars.father.age} y ${person.familiars.mother.age} años.` );
-console.log (`Viven en la calle ${person.address.name}.`);
-console.log (`En casa también vive mi hermano ${person.familiars.brother.name}, de ${person.familiars.brother.age} años.`); 
-console.log (`Eso quiere decir que nos llevamos ${person.familiars.brother.age - person.age} años.\n`);
+
+console.log(`Mis padres, ${PERSON.familiars.father.name} y ${PERSON.familiars.mother.name}, tienen ${PERSON.familiars.father.age} y ${PERSON.familiars.mother.age} años.` )
+console.log(`Viven en la calle ${PERSON.address.name}.`)
+console.log(`En casa también vive mi hermano ${PERSON.familiars.brother.name}, de ${PERSON.familiars.brother.age} años.`)
+console.log(`Eso quiere decir que nos llevamos ${PERSON.familiars.brother.age - PERSON.age} años.`)
 
 /* 
   Declara una función que imprima:
   'Hola mundo.'
  */
 
-console.log(ejercicio3);
+console.log('--------------------------------- Ejercicio 3 --------------------------------')
 
-function holamundo() {
-  let saludo = 'Hola mundo.\n'
-  console.log(saludo);
+function helloWorld() {
+  console.log('Hola mundo.')
 }
-holamundo()
+
+helloWorld()
 
 /* 
   Declara una función que, pasándole una lista con la estructura [nombre, edad, dirección] o la estructura [nombre, edad, municipio, dirección] imprima por pantalla:
   'Hola {nombre}. Veo que tienes {edad} y vives en {dirección}.'
  */
 
-console.log(ejercicio4);
+console.log('--------------------------------- Ejercicio 4 --------------------------------')
 
-const estructura = (nombre, edad, municipio, dirección) => {
-  console.log(`Hola ${nombre}.\nVeo que tienes ${edad} años, y vives en ${dirección}, que se encuentra en ${municipio}.\n`);
+const CARLOS_INFO = ['Carlos', 29, 'José', 'Pepi', 'Villena', 'La Revoltosa']
+
+const printPersonalHello = (info) => {
+  console.log(`Hola ${info[0]}. Veo que tienes ${info[1]} años y vives en ${info[info.length - 1]}, que se encuentra en ${info[info.length - 2]}.`)
 }
 
-estructura('Carlos', 29, 'Villena', 'La Revoltosa')
+printPersonalHello(CARLOS_INFO)
